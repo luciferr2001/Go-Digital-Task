@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-card class="mt-4">
+    <button mat-raised-button (click)="goBack()">Go Back</button>
+    <div class="row mt-3">
+      <h1 class="text-secondary">Details</h1>
+        <h3><strong>First Name</strong> - {{newEmployeeArr?.firstName}}</h3>
+        <h3><strong>Middle Name</strong> -
+          <span *ngIf="newEmployeeArr?.middleName==''|| newEmployeeArr?.middleName==null ; else mName ">
+              NA
+          </span>
+        </h3>
+        <h3><strong>Last Name</strong> - {{newEmployeeArr?.lastName}}</h3>
+        <h3><strong>Phone Number</strong> - {{newEmployeeArr?.phoneNo}}</h3>
+        <h3><strong>Email</strong> - {{newEmployeeArr?.email}}</h3>
+        <h3><strong>Address 1</strong> - {{newEmployeeArr?.address1}}</h3>
+        <h3><strong>Address 2</strong> -
+          <span *ngIf="newEmployeeArr?.address2=='' || newEmployeeArr?.address2==null ; else address2 ">
+            NA
+          </span>
+        </h3>
+        <h3><strong>State</strong> - {{newEmployeeArr?.state}}</h3>
+        <h3><strong>City</strong> - {{newEmployeeArr?.city}}</h3>
+        <h3><strong>Zip Code</strong> - {{newEmployeeArr?.zip}}</h3>
+        <ng-template #address2>
+          {{newEmployeeArr?.address2}}
+        </ng-template>
+        <ng-template #mName>
+          {{newEmployeeArr?.middleName}}
+        </ng-template>
+    </div>
+  </mat-card>
+</div>
